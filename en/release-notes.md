@@ -1,10 +1,19 @@
-## Security > Server Security Check > Release Note
+## Security > Server Security Check > 릴리스 노트
 
-### October 25, 2022
+### 2023. 04. 25.
+
+#### 기능 개선
+* 전자금융기반시설 보안 취약점 평가기준(제2023-1호) 항목 반영
+
+### 2022. 10. 25.
+
+#### 기능 개선
 * Service Gateway 연동 지원
 
-### January 26, 2021
+### 2021. 01. 26.
+
+#### 기능 추가
 * 통합 보고서 다운로드 기능 추가
 
-### October 27, 2020
-* The Server Security Check service released
+### 2020. 10. 27.
+* Server Security Check 서비스 출시
