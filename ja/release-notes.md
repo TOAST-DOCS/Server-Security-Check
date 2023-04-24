@@ -12,3 +12,4 @@
 
 ### 2020. 10. 27.
 * Server Security Checkサービスリリース
+
