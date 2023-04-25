@@ -3,7 +3,7 @@
 ### April 25, 2023
 
 #### Feature Updates
-* 전자금융기반시설 보안 취약점 평가기준(제2023-1호) 항목 반영
+* Reflected analysis and assessment criteria (No. 2023-1) items of vulnerabilities of electronic financial facilities
 
 ### October 25, 2022
 
