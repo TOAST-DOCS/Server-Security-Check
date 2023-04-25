@@ -18,3 +18,7 @@ This service checks the security vulnerabilities of new and existing systems and
 ## Service procedure
 
 ![serversecuritycheck_00_20201015.png](https://static.toastoven.net/prod_serversecuritycheck/serversecuritycheck_00_20201020.png)
+<<<<<<< HEAD
+=======
+
+>>>>>>> beta
