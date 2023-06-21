@@ -42,9 +42,3 @@ OS Security Check Success! :)
 1\. How to inquire **Customer Center > 1:1 Inquiry**
 
 2\. Response time: Weekdays: 09:00-18:00
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> beta
