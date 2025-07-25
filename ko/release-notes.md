@@ -5,8 +5,8 @@
 #### 기능 개선
 
 * 점검 가능 대상 추가 및 제거
-  * Rocky Linux 추가
-  * CentOS 제거
+    * Rocky Linux 추가
+    * CentOS 제거
 
 ### 2023. 04. 25.
 
