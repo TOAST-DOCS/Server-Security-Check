@@ -85,7 +85,7 @@ x-nhn-authorization: {token-id}
 | page | Query | Integer | X | 조회할 페이지 번호 (default: 1) |
 | limit | Query | Integer | X | 조회할 페이지 크기 (default: 10, max: 1000) |
 | kind | Query | ENUM | X | 점검 종류 (OS, WAS)<br>현재는 OS만 지원 |
-| bss | Query | ENUM | X | 점검 기준("M": "주요정보통신기반시설", "F": 전자금융기반시설) |
+| bss | Query | ENUM | X | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
 
 ##### 응답
 
