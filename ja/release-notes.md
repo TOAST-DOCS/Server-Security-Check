@@ -1,5 +1,9 @@
 ## Security > Server Security Check > リリースノート
 
+### 2025. 08. 26.
+
+#### 機能追加
+* Public APIを提供
 
 ### 2025. 07. 29.
 
