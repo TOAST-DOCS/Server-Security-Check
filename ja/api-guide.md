@@ -10,7 +10,7 @@ API 사용을 위해서는 API 엔드포인트와 토큰이 필요합니다.
 
 | 리전 | 엔드포인트 |
 | --- | ----- |
-| 모든 리전 | [https://kr1-server-security-check.api.nhncloudservice.com](https://kr1-server-security-check.api.nhncloudservice.com/) |
+| 모든 리전 | https://kr1-server-security-check.api.nhncloudservice.com |
 
 ### 인증 토큰 발급
 
@@ -30,14 +30,14 @@ API를 사용하려면 다음과 같은 정보가 필요합니다.
 | x-nhn-authorization | Header | String | O | 토큰 |
 
 * 서비스 Appkey
-    * Server Security Check 콘솔 상단 **URL \& Appkey** 메뉴에서 확인하거나 프로젝트 관리의 **이용 중인 서비스**에서 확인할 수 있습니다.
+    * Server Security Check 콘솔 상단 **URL & Appkey** 메뉴에서 확인하거나 프로젝트 관리의 **이용 중인 서비스**에서 확인할 수 있습니다.
     * 서비스 URL Path에 Appkey 가 포함됩니다.
 
 ### API 응답 공통 정보
 
 * API 요청에 대한 응답으로 아래와 같이 응답 코드를 반환 할 수 있습니다.
     * **200 OK**
-    * **400 Bad Reuqest**
+    * **400 Bad Request**
     * **401 Unauthorized**
     * **404 Not Found**
     * **413** **Payload Too Large**
@@ -82,27 +82,27 @@ x-nhn-authorization: {token-id}
 | language | Query | String | X | KO, EN, JA (default : KO) |
 | from | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 시작 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>ex: 2025-06-17T00:00:00%2B09:00 |
 | to | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 종료 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>ex: 2025-06-17T23:59:59%2B09:00 |
-| page | Query | Integer | O | 조회할 페이지 번호 (default: 1) |
-| limit | Query | Integer | O | 조회할 페이지 크기 (default: 10, max: 1000) |
+| page | Query | Integer | X | 조회할 페이지 번호 (default: 1) |
+| limit | Query | Integer | X | 조회할 페이지 크기 (default: 10, max: 1000) |
 | kind | Query | ENUM | X | 점검 종류 (OS, WAS)<br>현재는 OS만 지원 |
-| bss | Query | ENUM | X | 점검 기준("M": "주요정보통신기반시설", "F": 전자금융기반시설) |
+| bss | Query | ENUM | X | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
 
 ##### 응답
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
-| --- | --- | --- | --- | --- |
-| usageStasNo | Body | String | O | 점검 결과 sn |
-| instanceName | Body | String | O | 점검 인스턴스 이름 |
-| os | Body | ENUM | O | 점검 인스턴스 os<br>(Window, Linux) |
-| systemVersion | Body | String | O | 점검 인스턴스 os 버전 |
-| bss | Body | ENUM | O | 점검 기준("M": "주요정보통신기반시설", "F": 전자금융기반시설) |
-| scriptVersion | Body | String | O | 점검 스크립트 버전 |
-| executionTime | Body | DateTime | O | 점검 실행 시간 |
-| checkCount | Body | Integer | O | 점검 개수 |
-| weakCount | Body | Integer | O | 취약점 개수 |
-| level3WeakCount | Body | Integer | O | 취약점 레벨 상 |
-| level2WeakCount | Body | Integer | O | 취약점 레벨 중 |
-| level1WeakCount | Body | Integer | O | 취약점 레벨 하 |
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| usageStasNo | Body | String | 점검 결과 sn |
+| instanceName | Body | String | 점검 인스턴스 이름 |
+| os | Body | ENUM | 점검 인스턴스 os<br>(Window, Linux) |
+| systemVersion | Body | String | 점검 인스턴스 os 버전 |
+| bss | Body | ENUM | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
+| scriptVersion | Body | String | 점검 스크립트 버전 |
+| executionTime | Body | DateTime | 점검 실행 시간 |
+| checkCount | Body | Integer | 점검 개수 |
+| weakCount | Body | Integer | 취약점 개수 |
+| level3WeakCount | Body | Integer | 취약점 레벨 상 |
+| level2WeakCount | Body | Integer | 취약점 레벨 중 |
+| level1WeakCount | Body | Integer | 취약점 레벨 하 |
 
 <details>
 <summary><span>예시</span></summary>
@@ -157,62 +157,6 @@ x-nhn-authorization: {token-id}
 
 <br>
 
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
 </details>
 
 ### 점검 결과 상세 조회
@@ -236,15 +180,15 @@ x-nhn-authorization: {token-id}
 
 #### 응답
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
-| --- | --- | --- | --- | --- |
-| categoryName | Body | String | O | 점검 분류 |
-| resultId | Body | String | O | 분석 결과 id |
-| weakLevel | Body | ENUM | O | 취약 레벨("H", "M", "L") |
-| weakLevelName | Body | String | O | 취약점 enum 이름 |
-| resultCode | Body | String | O | 점검 주기 설정 |
-| itemName | Body | String | O | 항목명 |
-| manageMethod | Body | String | O | 대응 방안 |
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| categoryName | Body | String | 점검 분류 |
+| resultId | Body | String | 분석 결과 id |
+| weakLevel | Body | ENUM | 취약 레벨("H", "M", "L") |
+| weakLevelName | Body | String | 취약점 enum 이름 |
+| resultCode | Body | String | 점검 주기 설정 |
+| itemName | Body | String | 항목명 |
+| manageMethod | Body | String | 대응 방안 |
 
 <details>
 <summary><span>예시</span></summary>
