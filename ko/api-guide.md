@@ -89,20 +89,20 @@ x-nhn-authorization: {token-id}
 
 ##### 응답
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
-| --- | --- | --- | --- | --- |
-| usageStasNo | Body | String | O | 점검 결과 sn |
-| instanceName | Body | String | O | 점검 인스턴스 이름 |
-| os | Body | ENUM | O | 점검 인스턴스 os<br>(Window, Linux) |
-| systemVersion | Body | String | O | 점검 인스턴스 os 버전 |
-| bss | Body | ENUM | O | 점검 기준("M": "주요정보통신기반시설", "F": 전자금융기반시설) |
-| scriptVersion | Body | String | O | 점검 스크립트 버전 |
-| executionTime | Body | DateTime | O | 점검 실행 시간 |
-| checkCount | Body | Integer | O | 점검 개수 |
-| weakCount | Body | Integer | O | 취약점 개수 |
-| level3WeakCount | Body | Integer | O | 취약점 레벨 상 |
-| level2WeakCount | Body | Integer | O | 취약점 레벨 중 |
-| level1WeakCount | Body | Integer | O | 취약점 레벨 하 |
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| usageStasNo | Body | String | 점검 결과 sn |
+| instanceName | Body | String | 점검 인스턴스 이름 |
+| os | Body | ENUM | 점검 인스턴스 os<br>(Window, Linux) |
+| systemVersion | Body | String | 점검 인스턴스 os 버전 |
+| bss | Body | ENUM | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
+| scriptVersion | Body | String | 점검 스크립트 버전 |
+| executionTime | Body | DateTime | 점검 실행 시간 |
+| checkCount | Body | Integer | 점검 개수 |
+| weakCount | Body | Integer | 취약점 개수 |
+| level3WeakCount | Body | Integer | 취약점 레벨 상 |
+| level2WeakCount | Body | Integer | 취약점 레벨 중 |
+| level1WeakCount | Body | Integer | 취약점 레벨 하 |
 
 <details>
 <summary><span>예시</span></summary>
@@ -180,15 +180,15 @@ x-nhn-authorization: {token-id}
 
 #### 응답
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
-| --- | --- | --- | --- | --- |
-| categoryName | Body | String | O | 점검 분류 |
-| resultId | Body | String | O | 분석 결과 id |
-| weakLevel | Body | ENUM | O | 취약 레벨("H", "M", "L") |
-| weakLevelName | Body | String | O | 취약점 enum 이름 |
-| resultCode | Body | String | O | 점검 주기 설정 |
-| itemName | Body | String | O | 항목명 |
-| manageMethod | Body | String | O | 대응 방안 |
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| categoryName | Body | String | 점검 분류 |
+| resultId | Body | String | 분석 결과 id |
+| weakLevel | Body | ENUM | 취약 레벨("H", "M", "L") |
+| weakLevelName | Body | String | 취약점 enum 이름 |
+| resultCode | Body | String | 점검 주기 설정 |
+| itemName | Body | String | 항목명 |
+| manageMethod | Body | String | 대응 방안 |
 
 <details>
 <summary><span>예시</span></summary>
