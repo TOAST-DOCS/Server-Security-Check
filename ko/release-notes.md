@@ -1,5 +1,10 @@
 ## Security > Server Security Check > 릴리스 노트
 
+### 2025. 08. 26.
+
+#### 기능 추가
+* Public API 지원
+
 ### 2025. 07. 29.
 
 #### 기능 개선
