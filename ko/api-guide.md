@@ -25,7 +25,7 @@ API를 사용하려면 다음과 같은 정보가 필요합니다.
 
 * 토큰 발급 이후 API 헤더에 토큰 정보를 포함시킵니다.
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
+| 이름 | 구분 | 타입 | 필수 | 설명 |
 | --- | --- | --- | --- | --- |
 | x-nhn-authorization | Header | String | O | 토큰 |
 
@@ -89,12 +89,12 @@ x-nhn-authorization: {token-id}
 
 ##### 응답
 
-| 이름 | 종류 | 형식 | 설명 |
+| 이름 | 구분 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | usageStasNo | Body | String | 점검 결과 sn |
 | instanceName | Body | String | 점검 인스턴스 이름 |
-| os | Body | ENUM | 점검 인스턴스 os<br>(Window, Linux) |
-| systemVersion | Body | String | 점검 인스턴스 os 버전 |
+| os | Body | ENUM | 점검 인스턴스 OS<br>(Windows, Linux) |
+| systemVersion | Body | String | 점검 인스턴스 OS 버전 |
 | bss | Body | ENUM | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
 | scriptVersion | Body | String | 점검 스크립트 버전 |
 | executionTime | Body | DateTime | 점검 실행 시간 |
@@ -172,18 +172,18 @@ x-nhn-authorization: {token-id}
 
 이 API는 요청 본문을 요구하지 않습니다.
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
+| 이름 | 구분 | 타입 | 필수 | 설명 |
 | --- | --- | --- | --- | --- |
 | appKey | URL | String | O | 서비스 Appkey |
 | usageStasNo | URL | Integer | O | 점검 결과 번호 |
-| language | Query | String | X | KO, EN, JA (default : KO) |
+| language | Query | String | X | KO, EN, JA(기본값 : KO) |
 
 #### 응답
 
-| 이름 | 종류 | 형식 | 설명 |
+| 이름 | 구분 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | categoryName | Body | String | 점검 분류 |
-| resultId | Body | String | 분석 결과 id |
+| resultId | Body | String | 분석 결과 ID |
 | weakLevel | Body | ENUM | 취약 레벨("H", "M", "L") |
 | weakLevelName | Body | String | 취약점 enum 이름 |
 | resultCode | Body | String | 점검 주기 설정 |
