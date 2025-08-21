@@ -172,7 +172,7 @@ x-nhn-authorization: {token-id}
 
 이 API는 요청 본문을 요구하지 않습니다.
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
+| 이름 | 구분 | 타입 | 필수 | 설명 |
 | --- | --- | --- | --- | --- |
 | appKey | URL | String | O | 서비스 Appkey |
 | usageStasNo | URL | Integer | O | 점검 결과 번호 |
