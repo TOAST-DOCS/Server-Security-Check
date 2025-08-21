@@ -89,7 +89,7 @@ x-nhn-authorization: {token-id}
 
 ##### 응답
 
-| 이름 | 종류 | 형식 | 설명 |
+| 이름 | 구분 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | usageStasNo | Body | String | 점검 결과 sn |
 | instanceName | Body | String | 점검 인스턴스 이름 |
