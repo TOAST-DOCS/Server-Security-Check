@@ -94,7 +94,7 @@ x-nhn-authorization: {token-id}
 | usageStasNo | Body | String | 점검 결과 sn |
 | instanceName | Body | String | 점검 인스턴스 이름 |
 | os | Body | ENUM | 점검 인스턴스 OS<br>(Windows, Linux) |
-| systemVersion | Body | String | 점검 인스턴스 os 버전 |
+| systemVersion | Body | String | 점검 인스턴스 OS 버전 |
 | bss | Body | ENUM | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
 | scriptVersion | Body | String | 점검 스크립트 버전 |
 | executionTime | Body | DateTime | 점검 실행 시간 |
