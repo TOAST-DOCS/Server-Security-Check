@@ -83,7 +83,7 @@ x-nhn-authorization: {token-id}
 | from | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 시작 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>예: 2025-06-17T00:00:00%2B09:00 |
 | to | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 종료 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>예: 2025-06-17T23:59:59%2B09:00 |
 | page | Query | Integer | X | 조회할 페이지 번호(기본값: 1) |
-| limit | Query | Integer | X | 조회할 페이지 크기 (default: 10, max: 1000) |
+| limit | Query | Integer | X | 조회할 페이지 크기(기본값: 10, 최대: 1000) |
 | kind | Query | ENUM | X | 점검 종류 (OS, WAS)<br>현재는 OS만 지원 |
 | bss | Query | ENUM | X | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
 
