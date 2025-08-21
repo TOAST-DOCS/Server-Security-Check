@@ -78,7 +78,7 @@ x-nhn-authorization: {token-id}
 | 이름 | 구분 | 타입 | 필수 | 설명 |
 | --- | --- | --- | --- | --- |
 | appKey | URL Path | String | O | 서비스 Appkey |
-| regionCode | Query | String | O | 리전 정보 (KR1, KR2, ...) |
+| regionCode | Query | String | O | 리전 정보(KR1, KR2, ...) |
 | language | Query | String | X | KO, EN, JA (default : KO) |
 | from | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 시작 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>ex: 2025-06-17T00:00:00%2B09:00 |
 | to | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 종료 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>ex: 2025-06-17T23:59:59%2B09:00 |
