@@ -180,7 +180,7 @@ x-nhn-authorization: {token-id}
 
 #### 응답
 
-| 이름 | 종류 | 형식 | 설명 |
+| 이름 | 구분 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | categoryName | Body | String | 점검 분류 |
 | resultId | Body | String | 분석 결과 ID |
