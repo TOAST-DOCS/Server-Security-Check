@@ -1,6 +1,6 @@
 ## Security > Server Security Check > API 가이드
 
-Server Security Check Public API를 설명 합니다.
+Server Security Check Public API를 설명합니다.
 
 ## 공통 준비 사항
 
