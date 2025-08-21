@@ -176,7 +176,7 @@ x-nhn-authorization: {token-id}
 | --- | --- | --- | --- | --- |
 | appKey | URL | String | O | 서비스 Appkey |
 | usageStasNo | URL | Integer | O | 점검 결과 번호 |
-| language | Query | String | X | KO, EN, JA (default : KO) |
+| language | Query | String | X | KO, EN, JA(기본값: KO) |
 
 #### 응답
 
