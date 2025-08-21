@@ -31,7 +31,7 @@ API를 사용하려면 다음과 같은 정보가 필요합니다.
 
 * 서비스 Appkey
     * Server Security Check 콘솔 상단 **URL & Appkey** 메뉴에서 확인하거나 프로젝트 관리의 **이용 중인 서비스**에서 확인할 수 있습니다.
-    * 서비스 URL Path에 Appkey 가 포함됩니다.
+    * 서비스 URL Path에 Appkey가 포함됩니다.
 
 ### API 응답 공통 정보
 
