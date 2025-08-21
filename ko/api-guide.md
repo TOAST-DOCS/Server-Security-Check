@@ -183,7 +183,7 @@ x-nhn-authorization: {token-id}
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
 | categoryName | Body | String | 점검 분류 |
-| resultId | Body | String | 분석 결과 id |
+| resultId | Body | String | 분석 결과 ID |
 | weakLevel | Body | ENUM | 취약 레벨("H", "M", "L") |
 | weakLevelName | Body | String | 취약점 enum 이름 |
 | resultCode | Body | String | 점검 주기 설정 |
