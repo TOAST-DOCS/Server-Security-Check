@@ -25,24 +25,24 @@ API를 사용하려면 다음과 같은 정보가 필요합니다.
 
 * 토큰 발급 이후 API 헤더에 토큰 정보를 포함시킵니다.
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
+| 이름 | 구분 | 타입 | 필수 | 설명 |
 | --- | --- | --- | --- | --- |
 | x-nhn-authorization | Header | String | O | 토큰 |
 
 * 서비스 Appkey
     * Server Security Check 콘솔의 오른쪽 상단 **URL & Appkey** 메뉴 또는 프로젝트 관리의 **이용 중인 서비스**에서 확인할 수 있습니다.
-    * 서비스 URL Path에 Appkey가 포함됩니다.
+    * 서비스 URL Path에 Appkey 가 포함됩니다.
 
 ### API 응답 공통 정보
 
 * API 요청에 대한 응답으로 아래와 같이 응답 코드를 반환할 수 있습니다.
-    * **200 OK**
-    * **400 Bad Request**
-    * **401 Unauthorized**
-    * **404 Not Found**
-    * **413** **Payload Too Large**
-    * **405 Method Not Allowed**
-    * **500 Internal Server Error**
+    * 200 OK
+    * 400 Bad Request
+    * 401 Unauthorized
+    * 404 Not Found
+    * 413** **Payload Too Large
+    * 405 Method Not Allowed
+    * 500 Internal Server Error
 * 모든 응답 코드는 공통의 response body를 포함합니다.
     * 공통 response body
 
@@ -79,7 +79,7 @@ x-nhn-authorization: {token-id}
 | --- | --- | --- | --- | --- |
 | appKey | URL Path | String | O | 서비스 Appkey |
 | regionCode | Query | String | O | 리전 정보(KR1, KR2, ...) |
-| language | Query | String | X | KO, EN, JA(기본값: KO) |
+| language | Query | String | X | KO, EN, JA(기본값 : KO) |
 | from | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 시작 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>예: 2025-06-17T00:00:00%2B09:00 |
 | to | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 종료 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>예: 2025-06-17T23:59:59%2B09:00 |
 | page | Query | Integer | X | 조회할 페이지 번호(기본값: 1) |
@@ -91,7 +91,7 @@ x-nhn-authorization: {token-id}
 
 | 이름 | 구분 | 타입 | 설명 |
 | --- | --- | --- | --- |
-| usageStasNo | Body | String | 점검 결과 sn |
+| usageStasNo | Body | String | 점검 결과 시리얼 넘버 |
 | instanceName | Body | String | 점검 인스턴스 이름 |
 | os | Body | ENUM | 점검 인스턴스 OS<br>(Windows, Linux) |
 | systemVersion | Body | String | 점검 인스턴스 OS 버전 |
@@ -176,7 +176,7 @@ x-nhn-authorization: {token-id}
 | --- | --- | --- | --- | --- |
 | appKey | URL | String | O | 서비스 Appkey |
 | usageStasNo | URL | Integer | O | 점검 결과 번호 |
-| language | Query | String | X | KO, EN, JA(기본값: KO) |
+| language | Query | String | X | KO, EN, JA(기본값 : KO) |
 
 #### 응답
 
@@ -256,4 +256,3 @@ x-nhn-authorization: {token-id}
 </details>
 
 <br>
-
