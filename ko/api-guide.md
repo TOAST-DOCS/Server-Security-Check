@@ -1,6 +1,6 @@
 ## Security > Server Security Check > API 가이드
 
-Server Security Check Public API를 설명 합니다.
+Server Security Check Public API를 설명합니다.
 
 ## 공통 준비 사항
 
@@ -15,7 +15,7 @@ API 사용을 위해서는 API 엔드포인트와 토큰이 필요합니다.
 ### 인증 토큰 발급
 
 Server Security Check는 API 인증/인가를 받기 위해 NHN Cloud 토큰을 이용합니다.
-[NHN Cloud API 호출 및 인증](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/api-authentication/)을 확인하셔서 인증 토큰 사용에 필요한 정보를 확인합니다.
+[NHN Cloud API 호출 및 인증](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/api-authentication/)을 확인하여 인증 토큰 사용에 필요한 정보를 확인합니다.
 
 ## API 사용 공통 정보
 
@@ -23,30 +23,30 @@ Server Security Check는 API 인증/인가를 받기 위해 NHN Cloud 토큰�
 
 API를 사용하려면 다음과 같은 정보가 필요합니다.
 
-* 토큰 발급 이후에 API 헤더에 토큰 정보를 포함시킵니다.
+* 토큰 발급 이후 API 헤더에 토큰 정보를 포함시킵니다.
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
+| 이름 | 구분 | 타입 | 필수 | 설명 |
 | --- | --- | --- | --- | --- |
 | x-nhn-authorization | Header | String | O | 토큰 |
 
 * 서비스 Appkey
-    * Server Security Check 콘솔 상단 **URL & Appkey** 메뉴에서 확인하거나 프로젝트 관리의 **이용 중인 서비스**에서 확인할 수 있습니다.
+    * Server Security Check 콘솔의 오른쪽 상단 **URL & Appkey** 메뉴 또는 프로젝트 관리의 **이용 중인 서비스**에서 확인할 수 있습니다.
     * 서비스 URL Path에 Appkey 가 포함됩니다.
 
 ### API 응답 공통 정보
 
-* API 요청에 대한 응답으로 아래와 같이 응답 코드를 반환 할 수 있습니다.
-    * **200 OK**
-    * **400 Bad Request**
-    * **401 Unauthorized**
-    * **404 Not Found**
-    * **413** **Payload Too Large**
-    * **405 Method Not Allowed**
-    * **500 Internal Server Error**
+* API 요청에 대한 응답으로 아래와 같이 응답 코드를 반환할 수 있습니다.
+    * 200 OK
+    * 400 Bad Request
+    * 401 Unauthorized
+    * 404 Not Found
+    * 413** **Payload Too Large
+    * 405 Method Not Allowed
+    * 500 Internal Server Error
 * 모든 응답 코드는 공통의 response body를 포함합니다.
     * 공통 response body
 
-| 이름 | 종류 | 형식 | 설명 |
+| 이름 | 구분 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | header | Body | Object |  |
 | header.isSuccessful | Body | Boolean | true: 정상<br>false: 오류 |
@@ -62,7 +62,7 @@ API를 사용하려면 다음과 같은 정보가 필요합니다.
 ### 점검 결과 요약 조회
 
 원하는 기간의 점검 결과를 요약 조회합니다.
-(조회 기간 최대는 한달입니다.)
+최대 1개월 이내의 점검 결과를 조회할 수 있습니다.
 
 ```
 GET "/ssc/v1.0/appKey/{appKey}/inspection_result/summary"
@@ -75,26 +75,26 @@ x-nhn-authorization: {token-id}
 
 이 API는 요청 본문을 요구하지 않습니다.
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
+| 이름 | 구분 | 타입 | 필수 | 설명 |
 | --- | --- | --- | --- | --- |
 | appKey | URL Path | String | O | 서비스 Appkey |
-| regionCode | Query | String | O | 리전 정보 (KR1, KR2, ...) |
-| language | Query | String | X | KO, EN, JA (default : KO) |
-| from | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 시작 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>ex: 2025-06-17T00:00:00%2B09:00 |
-| to | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 종료 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>ex: 2025-06-17T23:59:59%2B09:00 |
-| page | Query | Integer | X | 조회할 페이지 번호 (default: 1) |
-| limit | Query | Integer | X | 조회할 페이지 크기 (default: 10, max: 1000) |
-| kind | Query | ENUM | X | 점검 종류 (OS, WAS)<br>현재는 OS만 지원 |
+| regionCode | Query | String | O | 리전 정보(KR1, KR2, ...) |
+| language | Query | String | X | KO, EN, JA(기본값 : KO) |
+| from | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 시작 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>예: 2025-06-17T00:00:00%2B09:00 |
+| to | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 종료 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>예: 2025-06-17T23:59:59%2B09:00 |
+| page | Query | Integer | X | 조회할 페이지 번호(기본값: 1) |
+| limit | Query | Integer | X | 조회할 페이지 크기(기본값: 10, 최대: 1000) |
+| kind | Query | ENUM | X | 점검 종류(OS, WAS)<br>현재는 OS만 지원 |
 | bss | Query | ENUM | X | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
 
 ##### 응답
 
-| 이름 | 종류 | 형식 | 설명 |
+| 이름 | 구분 | 타입 | 설명 |
 | --- | --- | --- | --- |
-| usageStasNo | Body | String | 점검 결과 sn |
+| usageStasNo | Body | String | 점검 결과 시리얼 넘버 |
 | instanceName | Body | String | 점검 인스턴스 이름 |
-| os | Body | ENUM | 점검 인스턴스 os<br>(Window, Linux) |
-| systemVersion | Body | String | 점검 인스턴스 os 버전 |
+| os | Body | ENUM | 점검 인스턴스 OS<br>(Windows, Linux) |
+| systemVersion | Body | String | 점검 인스턴스 OS 버전 |
 | bss | Body | ENUM | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
 | scriptVersion | Body | String | 점검 스크립트 버전 |
 | executionTime | Body | DateTime | 점검 실행 시간 |
@@ -172,18 +172,18 @@ x-nhn-authorization: {token-id}
 
 이 API는 요청 본문을 요구하지 않습니다.
 
-| 이름 | 종류 | 형식 | 필수 | 설명 |
+| 이름 | 구분 | 타입 | 필수 | 설명 |
 | --- | --- | --- | --- | --- |
 | appKey | URL | String | O | 서비스 Appkey |
 | usageStasNo | URL | Integer | O | 점검 결과 번호 |
-| language | Query | String | X | KO, EN, JA (default : KO) |
+| language | Query | String | X | KO, EN, JA(기본값 : KO) |
 
 #### 응답
 
-| 이름 | 종류 | 형식 | 설명 |
+| 이름 | 구분 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | categoryName | Body | String | 점검 분류 |
-| resultId | Body | String | 분석 결과 id |
+| resultId | Body | String | 분석 결과 ID |
 | weakLevel | Body | ENUM | 취약 레벨("H", "M", "L") |
 | weakLevelName | Body | String | 취약점 enum 이름 |
 | resultCode | Body | String | 점검 주기 설정 |
