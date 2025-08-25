@@ -91,7 +91,7 @@ x-nhn-authorization: {token-id}
 
 | 이름 | 구분 | 타입 | 설명 |
 | --- | --- | --- | --- |
-| usageStasNo | Body | String | 점검 결과 sn |
+| usageStasNo | Body | String | 점검 결과 시리얼 넘버 |
 | instanceName | Body | String | 점검 인스턴스 이름 |
 | os | Body | ENUM | 점검 인스턴스 OS<br>(Windows, Linux) |
 | systemVersion | Body | String | 점검 인스턴스 OS 버전 |
