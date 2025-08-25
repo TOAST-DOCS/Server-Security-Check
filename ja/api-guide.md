@@ -1,41 +1,41 @@
-## Security > Server Security Check > API 가이드
+## Security > Server Security Check > APIガイド
 
-Server Security Check Public API를 설명합니다.
+Server Security Check Public APIについて説明します。
 
-## 공통 준비 사항
+## 共通の準備事項
 
-API 사용을 위해서는 API 엔드포인트와 토큰이 필요합니다.
+APIを使用するには、APIエンドポイントとトークンが必要です。
 
-### API 엔드포인트
+### APIエンドポイント
 
-| 리전 | 엔드포인트 |
+| リージョン | エンドポイント |
 | --- | ----- |
-| 모든 리전 | https://kr1-server-security-check.api.nhncloudservice.com |
+| 全てのリージョン | https://kr1-server-security-check.api.nhncloudservice.com |
 
-### 인증 토큰 발급
+### 認証トークンの発行
 
-Server Security Check는 API 인증/인가를 받기 위해 NHN Cloud 토큰을 이용합니다.
-[NHN Cloud API 호출 및 인증](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/api-authentication/)을 확인하여 인증 토큰 사용에 필요한 정보를 확인합니다.
+Server Security Checkは、APIの認証・認可のためにNHN Cloudトークンを利用します。
+[NHN Cloud APIの呼び出しと認証](https://docs.nhncloud.com/ja/nhncloud/ja/public-api/api-authentication/)を参照し、認証トークンの使用に必要な情報を確認します。
 
-## API 사용 공통 정보
+## API利用の共通情報
 
-### API 요청 공통 정보
+### APIリクエスト共通情報
 
-API를 사용하려면 다음과 같은 정보가 필요합니다.
+APIを使用するには、以下の情報が必要です。
 
-* 토큰 발급 이후 API 헤더에 토큰 정보를 포함시킵니다.
+* トークン発行後、APIヘッダにトークン情報を含めます。
 
-| 이름 | 구분 | 타입 | 필수 | 설명 |
+| 名前 | 区分 | 型 | 必須 | 説明 |
 | --- | --- | --- | --- | --- |
-| x-nhn-authorization | Header | String | O | 토큰 |
+| x-nhn-authorization | Header | String | O | トークン |
 
-* 서비스 Appkey
-    * Server Security Check 콘솔의 오른쪽 상단 **URL & Appkey** 메뉴 또는 프로젝트 관리의 **이용 중인 서비스**에서 확인할 수 있습니다.
-    * 서비스 URL Path에 Appkey가 포함됩니다.
+* サービスAppkey
+    * Server Security Checkコンソール右上の**URL & Appkey**メニュー、またはプロジェクト管理の**利用中のサービス**から確認できます。
+    * サービスのURL PathにAppKeyが含まれます。
 
-### API 응답 공통 정보
+### APIレスポンス共通情報
 
-* API 요청에 대한 응답으로 아래와 같이 응답 코드를 반환할 수 있습니다.
+* APIリクエストへの応答として、以下のようなレスポンスコードを返すことがあります。
     * 200 OK
     * 400 Bad Request
     * 401 Unauthorized
@@ -43,26 +43,26 @@ API를 사용하려면 다음과 같은 정보가 필요합니다.
     * 413 Payload Too Large
     * 405 Method Not Allowed
     * 500 Internal Server Error
-* 모든 응답 코드는 공통의 response body를 포함합니다.
-    * 공통 response body
+* 全てのレスポンスコードは、共通のレスポンスボディを含みます。
+    * 共通レスポンスボディ
 
-| 이름 | 구분 | 타입 | 설명 |
+| 名前 | 区分 | 型 | 説明 |
 | --- | --- | --- | --- |
 | header | Body | Object |  |
-| header.isSuccessful | Body | Boolean | true: 정상<br>false: 오류 |
-| header.resultCode | Body | Integer | 0: 정상<br>그 외: 오류 |
-| header.resultMessage | Body | String | "SUCCESS": 정상<br>그 외: 오류 원인 메시지 |
+| header.isSuccessful | Body | Boolean | true:正常<br>false:エラー |
+| header.resultCode | Body | Integer | 0:正常<br>その他:エラー |
+| header.resultMessage | Body | String | "SUCCESS":正常<br>その他:エラー原因メッセージ |
 
-* <span style="color: rgb(49, 51, 56);">공통 response body 외 자세한 응답 결과는 응답 본문 헤더를 참고합니다.</span>
+* <span style="color: rgb(49, 51, 56);">共通レスポンスボディ以外の詳細な応答結果は、レスポンス本文のヘッダを参照してください。</span>
 
-> [주의] API 응답에 가이드에 명시되지 않은 필드가 나타날 수 있습니다. 이런 필드는 NHN Cloud 내부 용도로 사용되며 사전 공지 없이 변경될 수 있으므로 사용하지 않습니다.
+> [注意] APIの応答に、ガイドに記載されていないフィールドが含まれることがあります。これらのフィールドはNHN Cloudの内部目的で使用され、事前の通知なく変更される可能性があるため、使用しないでください。
 
 ## Server Security Check
 
-### 점검 결과 요약 조회
+### 点検結果の要約照会
 
-원하는 기간의 점검 결과를 요약 조회합니다.
-최대 1개월 이내의 점검 결과를 조회할 수 있습니다.
+指定した期間の点検結果を要約して照会します。
+最大1か月以内の点検結果を照会できます。
 
 ```
 GET "/ssc/v1.0/appKey/{appKey}/inspection_result/summary"
@@ -71,41 +71,41 @@ x-nhn-authorization: {token-id}
 
 <br>
 
-##### 요청
+##### リクエスト
 
-이 API는 요청 본문을 요구하지 않습니다.
+このAPIはリクエスト本文を要求しません。
 
-| 이름 | 구분 | 타입 | 필수 | 설명 |
+| 名前 | 区分 | 型 | 必須 | 説明 |
 | --- | --- | --- | --- | --- |
-| appKey | URL Path | String | O | 서비스 Appkey |
-| regionCode | Query | String | O | 리전 정보(KR1, KR2, ...) |
-| language | Query | String | X | KO, EN, JA(기본값 : KO) |
-| from | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 시작 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>예: 2025-06-17T00:00:00%2B09:00 |
-| to | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 검색 종료 시간<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>예: 2025-06-17T23:59:59%2B09:00 |
-| page | Query | Integer | X | 조회할 페이지 번호(기본값: 1) |
-| limit | Query | Integer | X | 조회할 페이지 크기(기본값: 10, 최대: 1000) |
-| kind | Query | ENUM | X | 점검 종류(OS, WAS)<br>현재는 OS만 지원 |
-| bss | Query | ENUM | X | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
+| appKey | URL Path | String | O | サービスAppkey |
+| regionCode | Query | String | O | リージョン情報(KR1, KR2, ...) |
+| language | Query | String | X | KO, EN, JA(デフォルト値: KO) |
+| from | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 検索開始時間<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>例: 2025-06-17T00:00:00%2B09:00 |
+| to | Query | <span style="color: rgb(49, 51, 56);">DateTime</span> | O | 検索終了時間<span style="color: rgb(49, 51, 56);">(</span><span style="color: oklch(0.3039 0.04 213.68);">YYYY-MM-DDTHH:mm:ss±hh:mm</span><span style="color: rgb(49, 51, 56);">)</span><br>例: 2025-06-17T23:59:59%2B09:00 |
+| page | Query | Integer | X | 照会するページ番号(デフォルト値: 1) |
+| limit | Query | Integer | X | 照会するページサイズ(デフォルト値: 10、最大: 1000) |
+| kind | Query | ENUM | X | 点検種類(OS, WAS)<br>現在はOSのみサポート |
+| bss | Query | ENUM | X | 点検基準("M":主要情報通信基盤施設、 "F":電子金融基盤施設) |
 
-##### 응답
+##### レスポンス
 
-| 이름 | 구분 | 타입 | 설명 |
+| 名前 | 区分 | 型 | 説明 |
 | --- | --- | --- | --- |
-| usageStasNo | Body | String | 점검 결과 시리얼 넘버 |
-| instanceName | Body | String | 점검 인스턴스 이름 |
-| os | Body | ENUM | 점검 인스턴스 OS<br>(Windows, Linux) |
-| systemVersion | Body | String | 점검 인스턴스 OS 버전 |
-| bss | Body | ENUM | 점검 기준("M": 주요정보통신기반시설, "F": 전자금융기반시설) |
-| scriptVersion | Body | String | 점검 스크립트 버전 |
-| executionTime | Body | DateTime | 점검 실행 시간 |
-| checkCount | Body | Integer | 점검 개수 |
-| weakCount | Body | Integer | 취약점 개수 |
-| level3WeakCount | Body | Integer | 취약점 레벨 상 |
-| level2WeakCount | Body | Integer | 취약점 레벨 중 |
-| level1WeakCount | Body | Integer | 취약점 레벨 하 |
+| usageStasNo | Body | String | 点検結果のシリアルナンバー |
+| instanceName | Body | String | 点検対象インスタンスの名前 |
+| os | Body | ENUM | 点検対象インスタンスのOS<br>(Windows、Linux) |
+| systemVersion | Body | String | 点検対象インスタンスのOSバージョン |
+| bss | Body | ENUM | 点検基準("M":主要情報通信基盤施設、 "F":電子金融基盤施設) |
+| scriptVersion | Body | String | 点検スクリプトのバージョン |
+| executionTime | Body | DateTime | 点検実行時間 |
+| checkCount | Body | Integer | 点検項目数 |
+| weakCount | Body | Integer | 脆弱点の数 |
+| level3WeakCount | Body | Integer | 脆弱性レベル「高」の数 |
+| level2WeakCount | Body | Integer | 脆弱性レベル「中」の数 |
+| level1WeakCount | Body | Integer | 脆弱性レベル「低」の数 |
 
 <details>
-<summary><span>예시</span></summary>
+<summary><span>例</span></summary>
 
 ```json
 {
@@ -159,39 +159,39 @@ x-nhn-authorization: {token-id}
 
 </details>
 
-### 점검 결과 상세 조회
+### 点検結果の詳細照会
 
-점검 결과 요약 조회 후 점검 결과 번호로 특정 점검 결과를 상세 조회합니다.
+点検結果の要約を照会した後、点検結果番号で特定の点検結果を詳細に照会します。
 
 ```
 GET "/ssc/v1.0/appKey/{appKey}/inspection_result/details/{usageStasNo}"
 x-nhn-authorization: {token-id}
 ```
 
-#### 요청
+#### リクエスト
 
-이 API는 요청 본문을 요구하지 않습니다.
+このAPIはリクエスト本文を要求しません。
 
-| 이름 | 구분 | 타입 | 필수 | 설명 |
+| 名前 | 区分 | 型 | 必須 | 説明 |
 | --- | --- | --- | --- | --- |
-| appKey | URL | String | O | 서비스 Appkey |
-| usageStasNo | URL | Integer | O | 점검 결과 번호 |
-| language | Query | String | X | KO, EN, JA(기본값 : KO) |
+| appKey | URL | String | O | サービスAppkey |
+| usageStasNo | URL | Integer | O | 点検結果番号 |
+| language | Query | String | X | KO, EN, JA(デフォルト値: KO) |
 
-#### 응답
+#### レスポンス
 
-| 이름 | 구분 | 타입 | 설명 |
+| 名前 | 区分 | 型 | 説明 |
 | --- | --- | --- | --- |
-| categoryName | Body | String | 점검 분류 |
-| resultId | Body | String | 분석 결과 ID |
-| weakLevel | Body | ENUM | 취약 레벨("H", "M", "L") |
-| weakLevelName | Body | String | 취약점 enum 이름 |
-| resultCode | Body | String | 점검 주기 설정 |
-| itemName | Body | String | 항목명 |
-| manageMethod | Body | String | 대응 방안 |
+| categoryName | Body | String | 点検分類 |
+| resultId | Body | String | 分析結果ID |
+| weakLevel | Body | ENUM | 脆弱性レベル("H"、"M"、"L") |
+| weakLevelName | Body | String | 脆弱性レベルのenum名 |
+| resultCode | Body | String | 点検周期の設定 |
+| itemName | Body | String | 項目名 |
+| manageMethod | Body | String | 対応策 |
 
 <details>
-<summary><span>예시</span></summary>
+<summary><span>例</span></summary>
 
 ```json
 {
@@ -203,49 +203,49 @@ x-nhn-authorization: {token-id}
     },
     "results": [
         {
-            "categoryName": "1. 계정관리",
+            "categoryName": "1. アカウント管理",
             "resultId": "U-01",
             "weakLevel": "H",
             "resultCode": "X",
-            "weakLevelName": "상",
-            "itemName": "root 계정 원격 접속 제한",
-            "manageMethod": "1. \"/etc/securetty\" 파일에서 pts/0 ~ pts/x 설정 제거 또는 주석 처리<br>2. \"/etc/pam.d/login\" 파일 수정 또는 신규 삽입<br>auth required /lib/security/pam_securitty.so"
+            "weakLevelName": "高"、
+            "itemName": "rootアカウントのリモート接続制限"、
+            "manageMethod": "1. 「/etc/securetty」ファイルからpts/0～pts/xの設定を削除またはコメントアウト<br>2. 「/etc/pam.d/login」ファイルを修正または新規挿入<br>auth required /lib/security/pam_securitty.so"
         },
         {
-            "categoryName": "1. 계정관리",
+            "categoryName": "1. アカウント管理",
             "resultId": "U-02",
             "weakLevel": "H",
             "resultCode": "X",
-            "weakLevelName": "상",
-            "itemName": "비밀번호 복잡성 설정",
-            "manageMethod": "[Linux - RHEL5]<br>1. 비밀번호 복잡성 설정 파일 확인<br># /etc/pam.d/system-auth, /etc/login.defs 내용을 내부 정책에 맞도록 편집<br>2. /etc/pam.d/system-auth 파일 설정<br>※ 다음 라인에 비밀번호 정책을 설정함<br>- 비밀번호 정책 설정 예시<br>password   requisite  /lib/security/$ISA/pam_cracklib.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1<br>3. /etc/login.defs 파일 점검<br>pass_warn_age = 7(비밀번호 기간 만료 경고)<br>pass_max_days = 60(최대 비밀번호 사용 기간 설정)<br>pass_min_day = 1(최소 비밀번호 변경 기간 설정)<br><br>[Linux - RHEL7]<br>1. 비밀번호 복잡성 설정 파일 확인<br># /etc/pam.d/system-auth, /etc/login.defs 내용을 내부 정책에 맞도록 편집<br>2. /etc/pam.d/system-auth 파일 설정<br>※ 다음 라인에 비밀번호 정책을 설정함<br>- 비밀번호 정책 설정 예시<br>password   requisite  /lib/security/$ISA/pam_cracklib.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1<br>또는<br>password   requisite  /lib/security/$ISA/pam_pwquality.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1<br>3. /etc/login.defs 파일 점검<br>pass_warn_age = 7(비밀번호 기간 만료 경고)<br>pass_max_days = 60(최대 비밀번호 사용 기간 설정)<br>pass_min_day = 1(최소 비밀번호 변경 기간 설정)<br><br>[Linux - Ubuntu]<br>1. 비밀번호 복잡성 설정 파일 확인<br>/etc/pam.d/common-auth 내부 정책에 맞도록 편집<br>2. /etc/pam.d/common-auth 파일 설정<br>※ 다음 라인에 비밀번호 정책을 설정함<br>- 비밀번호 정책 설정 예시<br>password   requisite  /lib/security/$ISA/pam_cracklib.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1"
+            "weakLevelName": "高"、
+            "itemName": "パスワードの複雑性の設定"、
+            "manageMethod": "[Linux - RHEL5]<br>1. パスワード複雑性設定ファイルの確認<br># /etc/pam.d/system-auth、/etc/login.defsの内容を内部ポリシーに合わせて編集<br>2. /etc/pam.d/system-authファイルの設定<br>※次の行にパスワードポリシーを設定<br>- パスワードポリシー設定例<br>password requisite /lib/security/$ISA/pam_cracklib.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1<br>3. /etc/login.defsファイルの点検<br>pass_warn_age = 7 (パスワード有効期限の警告)<br>pass_max_days = 60 (パスワードの最大使用期間設定)<br>pass_min_day = 1 (パスワードの最小変更期間設定)<br><br>[Linux - RHEL7]<br>1. パスワード複雑性設定ファイルの確認<br># /etc/pam.d/system-auth、/etc/login.defsの内容を内部ポリシーに合わせて編集<br>2. /etc/pam.d/system-authファイルの設定<br>※次の行にパスワードポリシーを設定<br>- パスワードポリシー設定例<br>password requisite /lib/security/$ISA/pam_cracklib.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1<br>または<br>password requisite /lib/security/$ISA/pam_pwquality.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1<br>3. /etc/login.defsファイルの点検<br>pass_warn_age = 7 (パスワード有効期限の警告)<br>pass_max_days = 60 (パスワードの最大使用期間設定)<br>pass_min_day = 1 (パスワードの最小変更期間設定)<br><br>[Linux - Ubuntu]<br>1. パスワード複雑性設定ファイルの確認<br>/etc/pam.d/common-authを内部ポリシーに合わせて編集<br>2. /etc/pam.d/common-authファイルの設定<br>※次の行にパスワードポリシーを設定<br>- パスワードポリシー設定例<br>password requisite /lib/security/$ISA/pam_cracklib.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1"
         },
         {
-            "categoryName": "1. 계정관리",
+            "categoryName": "1. アカウント管理",
             "resultId": "U-03",
             "weakLevel": "H",
             "resultCode": "X",
-            "weakLevelName": "상",
-            "itemName": "계정 잠금 임곗값 설정",
-            "manageMethod": "1. vi 편집기를 이용해 \"/etc/pam.d/system-auth\" 파일 열기<br>2. 아래와 같이 수정 또는 신규 삽입<br>/etc/pam.d/system-auth 파일에 다음을 추가한다.  <br>auth required /lib/security/pam_tally2.so deny=5 unlock_time=120 no_magic_root<br>account required /lib/security/pam_tally2.so no_magic_root reset"
+            "weakLevelName": "高"、
+            "itemName": "アカウントロックのしきい値設定"、
+            "manageMethod": "1. viエディタで「/etc/pam.d/system-auth」ファイルを開く<br>2. 以下のように修正または新規挿入<br>/etc/pam.d/system-authファイルに以下を追加する。<br>auth required /lib/security/pam_tally2.so deny=5 unlock_time=120 no_magic_root<br>account required /lib/security/pam_tally2.so no_magic_root reset"
         },
         {
-            "categoryName": "1. 계정관리",
+            "categoryName": "1. アカウント管理",
             "resultId": "U-04",
             "weakLevel": "H",
             "resultCode": "O",
-            "weakLevelName": "상",
-            "itemName": "비밀번호 파일 보호",
-            "manageMethod": "1. /shadow 파일 존재 확인<br>(일반적으로 /etc 디렉터리 내 존재)<br># ls /etc<br>2. /etc/passwd 파일 내 두 번째 필드가 \"x\" 표시되는지 확인<br># cat /etc/passwd<br>root:x:0:0:root:/root:/bin/bash"
+            "weakLevelName": "高"、
+            "itemName": "パスワードファイルの保護"、
+            "manageMethod": "1. /shadowファイルの存在確認<br>(通常は/etcディレクトリ内に存在)<br># ls /etc<br>2. /etc/passwdファイル内の2番目のフィールドが「x」と表示されているか確認<br># cat /etc/passwd<br>root:x:0:0:root:/root:/bin/bash"
         },
         {
-            "categoryName": "2. 파일 및 디렉터리 관리",
+            "categoryName": "2. ファイル及びディレクトリ管理",
             "resultId": "U-05",
             "weakLevel": "H",
             "resultCode": "O",
-            "weakLevelName": "상",
-            "itemName": "root 홈, 패스 디렉터리 권한 및 패스 설정",
-            "manageMethod": "1. vi 편집기를 이용하여 root 계정의 설정 파일(~/.profile 과 /etc/profile) 열기<br># vi /etc/profile<br>2. 아래와 같이 수정<br>(수정 전) PATH=.:$PATH:$HOME/bin<br>(수정 후) PATH=$PATH:$HOME/bin:."
+            "weakLevelName": "高"、
+            "itemName": "rootのホームディレクトリ及びパスディレクトリの権限とパス設定"、
+            "manageMethod": "1. viエディタを利用してrootアカウントの設定ファイル(~/.profileと/etc/profile)を開く<br># vi /etc/profile<br>2. 以下のように修正<br>(修正前) PATH=.:$PATH:$HOME/bin<br>(修正後) PATH=$PATH:$HOME/bin:."
         }
     ]
 }
