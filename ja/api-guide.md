@@ -40,7 +40,7 @@ APIを使用するには、以下の情報が必要です。
     * 400 Bad Request
     * 401 Unauthorized
     * 404 Not Found
-    * 413** **Payload Too Large
+    * 413 Payload Too Large
     * 405 Method Not Allowed
     * 500 Internal Server Error
 * 全てのレスポンスコードは、共通のレスポンスボディを含みます。
