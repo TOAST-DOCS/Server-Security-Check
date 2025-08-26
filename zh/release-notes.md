@@ -1,5 +1,16 @@
 ## Security > Server Security Check > Release Note
 
+### August 26, 2025
+
+#### Feature Updates
+* API Guide provided
+
+### July 29, 2025
+
+#### Feature Updates
+* Removal of Maintenance Targets
+  * Removal of CentOS
+
 ### April 25, 2023
 
 #### Feature Updates

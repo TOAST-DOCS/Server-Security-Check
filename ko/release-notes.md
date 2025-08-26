@@ -1,11 +1,14 @@
 ## Security > Server Security Check > 릴리스 노트
 
+### 2025. 08. 26.
+
+#### 기능 추가
+* Public API 지원
+
 ### 2025. 07. 29.
 
 #### 기능 개선
-
-* 점검 가능 대상 추가 및 제거
-    * Rocky Linux 추가
+* 점검 가능 대상 제거
     * CentOS 제거
 
 ### 2023. 04. 25.
