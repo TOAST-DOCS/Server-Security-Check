@@ -36,7 +36,7 @@ Server Security Check 서비스 게이트웨이를 연동하는 방법은 아래
 * Network > Service Gateway 페이지로 이동하여 서비스 게이트웨이 생성을 클릭합니다.
 * 생성하고자 하는 서비스 게이트웨이의 이름, VPC, 서브넷을 입력하고 서비스를 Server Security Check로 선택한 뒤 확인을 클릭하면 Server Security Check 서비스 게이트웨이가 생성됩니다.
 
-![serversecuritycheck_01_20201015.png](https://static.toastoven.net/prod_serversecuritycheck/serversecuritycheck_01_20201015.png)
+![ssc_sg_251117.png](https://static.toastoven.net/prod_serversecuritycheck/ssc_sg_251117.png)
 
 ### 호스트 등록
 * 인스턴스에서 Server Security Check Endpoint의 IP를 찾을 수 있도록 호스트 파일에 Server Security Check 서비스 게이트웨이 IP 주소와 Server Security Check Endpoint 도메인을 입력합니다.
