@@ -45,15 +45,19 @@ Server Security Check 서비스 게이트웨이를 연동하는 방법은 아래
 * Server Security Check 서비스 게이트웨이의 IP 주소는 Network > Service Gateway 페이지에서 확인할 수 있습니다.
 
 **Windows**
+
 * C:\Windows\System32\drivers\etc\hosts 파일을 열고 다음 내용을 추가합니다.
+
 ```
 {Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.alpha-nhncloudservice.com
 ```
 
 **Linux**
+
 * /etc/hosts 파일을 열고 다음 내용을 추가합니다.
+
 ```
-> {Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.alpha-nhncloudservice.com
+{Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.alpha-nhncloudservice.com
 ```
 
 ## 운영 문의
