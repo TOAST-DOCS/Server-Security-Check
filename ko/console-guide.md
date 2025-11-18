@@ -28,6 +28,7 @@
 [root@centos7 ~]# ./agent.sh
 OS Security Check Success! :)
 ```
+<BR>
 
 ## Server Security Check 서비스 게이트웨이 연동 
 서비스 게이트웨이를 이용하면 NHN Cloud 내부에서 클라이언트와 Server Security Check가 통신할 때 외부 인터넷을 경유하지 않고, 내부 네트워크로 통신할 수 있습니다.
