@@ -49,7 +49,7 @@ Server Security Check 서비스 게이트웨이를 연동하는 방법은 아래
 **Linux**
 * /etc/hosts 파일을 열고 다음 내용을 추가합니다.
 > {Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.{stage}-nhncloudservice.com
-
+<BR>
 
 ## 운영 문의
 
