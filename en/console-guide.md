@@ -29,6 +29,37 @@ Bring up the Agent execution script by selecting instance OS, check type and che
 OS Security Check Success! :)
 ```
 
+## Integrate with Server Security Check Service Gateway 
+Using the Service Gateway, communication between clients and Server Security Check within NHN Cloud can be done through the internal network without going through the external Internet.
+How to integrate with Server Security Check Service Gateway is as below:
+
+1. Go to **Network > Service Gateway** page and click **+ Create Service Gateway**.
+2. Enter the **name**, **VPC**, and **subnet** of the Service Gateway you want to create, select **Server Security Check** as the **service**, and click **OK** to create the Server Security Check Service Gateway.
+
+![ssc_sg_251117.png](https://static.toastoven.net/prod_serversecuritycheck/ssc_sg_251117.png)
+
+### Register Host
+Enter the Server Security Check Service Gateway IP address and the Server Security Check endpoint domain in the hosts file so that the instance can find the IP address of the Server Security Check endpoint.
+
+You can find the IP address of the Server Security Check service gateway on the Network > Service Gateway page.
+
+**Windows**
+
+Open C:\Windows\System32\drivers\etc\hosts file and add the content below:
+
+```
+{IP address of the Server Security Check Service Gateway} api-serversecuritycheck.nhncloudservice.com
+```
+
+**Linux**
+
+Open /etc/hosts file and add the content below:
+
+```
+{IP address of the Server Security Check Service Gateway} api-serversecuritycheck.nhncloudservice.com
+```
+
+
 ## Operation Inquiry
 
 ### Inquiry target
