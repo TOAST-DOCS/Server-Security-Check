@@ -40,6 +40,7 @@ How to integrate with Server Security Check Service Gateway is as below:
 
 ### Register Host
 Enter the Server Security Check Service Gateway IP address and the Server Security Check endpoint domain in the hosts file so that the instance can find the IP address of the Server Security Check endpoint.
+
 You can find the IP address of the Server Security Check service gateway on the Network > Service Gateway page.
 
 **Windows**
