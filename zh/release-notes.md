@@ -1,5 +1,11 @@
 ## Security > Server Security Check > Release Note
 
+### November 25, 2025
+
+#### Feature Updates
+* Added Maintenance Targets
+   * Addition of Rocky Linux
+
 ### August 26, 2025
 
 #### Feature Updates
