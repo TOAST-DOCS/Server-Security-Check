@@ -48,7 +48,7 @@ You can find the IP address of the Server Security Check service gateway on the 
 Open C:\Windows\System32\drivers\etc\hosts file and add the content below:
 
 ```
-{IP address of the Server Security Check Service Gateway} api-serversecuritycheck.alpha-nhncloudservice.com
+{IP address of the Server Security Check Service Gateway} api-serversecuritycheck.beta-nhncloudservice.com
 ```
 
 **Linux**
@@ -56,7 +56,7 @@ Open C:\Windows\System32\drivers\etc\hosts file and add the content below:
 Open /etc/hosts file and add the content below:
 
 ```
-{IP address of the Server Security Check Service Gateway} api-serversecuritycheck.alpha-nhncloudservice.com
+{IP address of the Server Security Check Service Gateway} api-serversecuritycheck.beta-nhncloudservice.com
 ```
 
 
