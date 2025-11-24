@@ -35,18 +35,18 @@ OS Security Check Success! :)
 서비스 게이트웨이를 이용하면 NHN Cloud 내부에서 클라이언트와 Server Security Check가 통신할 때 외부 인터넷을 경유하지 않고, 내부 네트워크로 통신할 수 있습니다.
 Server Security Check 서비스 게이트웨이를 연동하는 방법은 아래와 같습니다.
 
-* Network > Service Gateway 페이지로 이동하여 서비스 게이트웨이 생성을 클릭합니다.
-* 생성하고자 하는 서비스 게이트웨이의 이름, VPC, 서브넷을 입력하고 서비스를 Server Security Check로 선택한 뒤 확인을 클릭하면 Server Security Check 서비스 게이트웨이가 생성됩니다.
+1. **Network > Service Gateway** 페이지로 이동하여 **+ 서비스 게이트웨이 생성**을 클릭합니다.
+2. 생성할 서비스 게이트웨이의 **이름**, **VPC**, **서브넷**을 입력하고 **서비스**를 **Server Security Check**로 선택한 뒤 **확인**을 클릭하면 Server Security Check 서비스 게이트웨이가 생성됩니다.
 
 ![ssc_sg_251117.png](https://static.toastoven.net/prod_serversecuritycheck/ssc_sg_251117.png)
 
 ### 호스트 등록
-* 인스턴스에서 Server Security Check Endpoint의 IP를 찾을 수 있도록 호스트 파일에 Server Security Check 서비스 게이트웨이 IP 주소와 Server Security Check Endpoint 도메인을 입력합니다.
-* Server Security Check 서비스 게이트웨이의 IP 주소는 Network > Service Gateway 페이지에서 확인할 수 있습니다.
+인스턴스에서 Server Security Check Endpoint의 IP를 찾을 수 있도록 호스트 파일에 Server Security Check 서비스 게이트웨이 IP 주소와 Server Security Check Endpoint 도메인을 입력합니다.
+Server Security Check 서비스 게이트웨이의 IP 주소는 **Network > Service Gateway** 페이지에서 확인할 수 있습니다.
 
 **Windows**
 
-* C:\Windows\System32\drivers\etc\hosts 파일을 열고 다음 내용을 추가합니다.
+C:\Windows\System32\drivers\etc\hosts 파일을 열고 다음 내용을 추가합니다.
 
 ```
 {Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.alpha-nhncloudservice.com
@@ -54,7 +54,7 @@ Server Security Check 서비스 게이트웨이를 연동하는 방법은 아래
 
 **Linux**
 
-* /etc/hosts 파일을 열고 다음 내용을 추가합니다.
+/etc/hosts 파일을 열고 다음 내용을 추가합니다.
 
 ```
 {Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.alpha-nhncloudservice.com
