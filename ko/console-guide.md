@@ -47,7 +47,7 @@ Server Security Check 서비스 게이트웨이의 IP 주소는 **Network > Serv
 C:\Windows\System32\drivers\etc\hosts 파일을 열고 다음 내용을 추가합니다.
 
 ```
-{Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.alpha-nhncloudservice.com
+{Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.nhncloudservice.com
 ```
 
 **Linux**
@@ -55,7 +55,7 @@ C:\Windows\System32\drivers\etc\hosts 파일을 열고 다음 내용을 추가�
 /etc/hosts 파일을 열고 다음 내용을 추가합니다.
 
 ```
-{Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.alpha-nhncloudservice.com
+{Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.nhncloudservice.com
 ```
 
 ## 운영 문의
