@@ -29,6 +29,37 @@
 OS Security Check Success! :)
 ```
 
+## Server Security Check サービスゲートウェイ連携
+サービスゲートウェイを利用すると、NHN Cloud内部でクライアントとServer Security Checkが通信する際、外部インターネットを経由せず、内部ネットワークで通信できます。
+Server Security Checkサービスゲートウェイを連携する方法は次のとおりです。
+
+* Network > Service Gatewayページへ移動して、サービスゲートウェイ作成をクリックします。
+* 作成するサービスゲートウェイの名前、VPC、サブネットを入力し、サービスをServer Security Checkに選択した後、確認をクリックすると、Server Security Checkサービスゲートウェイが作成されます。
+
+![ssc_sg_251117.png](https://static.toastoven.net/prod_serversecuritycheck/ssc_sg_251117.png)
+
+### ホスト登録
+* インスタンスでServer Security Check EndpointのIPを見つけられるように、ホストファイルにServer Security CheckサービスゲートウェイのIPアドレスとServer Security Check Endpointドメインを入力します。
+* Server Security CheckサービスゲートウェイのIPアドレスは、Network > Service Gatewayページで確認できます。
+
+**Windows**
+
+* C:\Windows\System32\drivers\etc\hostsファイルを開き、以下の内容を追加します。
+musub-kim marked this conversation as resolved.
+
+```
+{Server Security Check サービスゲートウェイIPアドレス} api-serversecuritycheck.alpha-nhncloudservice.com
+```
+
+**Linux**
+
+* /etc/hostsファイルを開き、以下の内容を追加します。
+
+```
+{Server Security Check サービスゲートウェイIPアドレス} api-serversecuritycheck.alpha-nhncloudservice.com
+```
+
+
 ## お問い合わせ
 
 ### お問い合わせ対象
