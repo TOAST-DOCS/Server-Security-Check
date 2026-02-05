@@ -15,7 +15,7 @@ APIを使用するには、APIエンドポイントとトークンが必要で�
 ### 認証トークンの発行
 
 Server Security Checkは、APIの認証・認可のためにNHN Cloudトークンを利用します。
-[NHN Cloud APIの呼び出しと認証](https://docs.nhncloud.com/ja/nhncloud/ja/public-api/api-authentication/)を参照し、認証トークンの使用に必要な情報を確認します。
+[User Access Keyトークン](https://docs.alpha-nhncloud.com/ja/nhncloud/ja/public-api/user-access-key-token/)を参照し、認証トークンの使用に必要な情報を確認します。
 
 ## API利用の共通情報
 
