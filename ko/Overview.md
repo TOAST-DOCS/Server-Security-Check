@@ -1,8 +1,12 @@
-## Security > Server Security Check > 개요
+<!-- pre-align:aligned sig=b08b65dec2ef -->
+
+<a id="security-server-security-check-overview"></a>
+## Security > Server Security Check > 개요 { #security-server-security-check-overview }
 
 신규 또는 운영 중인 시스템의 보안 취약점을 점검하고 발견된 취약점에 대한 대응 방법을 제공하는 서비스입니다.
 
-## 주요 기능
+<a id="main-features"></a>
+## 주요 기능 { #main-features }
 
 * 시스템의 주요 보안 설정값을 점검하고 조치해 시스템 안전성을 확보하고 잠재적 취약점을 제거할 수 있습니다.
 * 주요정보통신기반시설, 전자금융기반시설 보안 기준을 바탕으로 체크리스트를 만들어 점검을 수행합니다.
@@ -10,11 +14,13 @@
 * 고객에게 안정적 서비스를 제공하여 기업 이미지 향상에 기여할 수 있습니다.
 * 발견된 취약점에 대한 근본적인 대응 방법을 제공합니다.
 
-## 특이 사항
+<a id="special-notes"></a>
+## 특이 사항 { #special-notes }
 
 * 서비스 문제로 점검이 중단된 경우에는 이용 요금이 과금되지 않습니다.
 * Agent 점검 중단 시 지원 서비스를 제공합니다.
 
-## 서비스 절차
+<a id="service-procedure"></a>
+## 서비스 절차 { #service-procedure }
 
 ![serversecuritycheck_00_20201015.png](https://static.toastoven.net/prod_serversecuritycheck/serversecuritycheck_00_20201020.png)

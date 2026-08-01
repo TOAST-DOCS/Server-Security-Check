@@ -1,14 +1,19 @@
-## Security > Server Security Check > 콘솔 사용 가이드
+<!-- pre-align:aligned sig=782f156d2e4a -->
+
+<a id="security-server-security-check-console-guide"></a>
+## Security > Server Security Check > 콘솔 사용 가이드 { #security-server-security-check-console-guide }
 
 여기에서는 점검 Agent 실행 절차를 설명합니다. 
 
-## Agent 실행 절차
+<a id="procedure-to-execute-agent"></a>
+## Agent 실행 절차 { #procedure-to-execute-agent }
 
 인스턴스 OS, 점검 종류, 점검 기준을 선택하여 Agent 실행 스크립트를 불러옵니다.
 
 ![serversecuritycheck_01_20201015.png](https://static.toastoven.net/prod_serversecuritycheck/serversecuritycheck_01_20201015.png)
 
-### Linux 계열 Agent
+<a id="linux-family-agent"></a>
+### Linux 계열 Agent { #linux-family-agent }
 
 1\. 실행 스크립트를 복사하려면 클립보드 복사를 클릭합니다.
 
@@ -29,7 +34,8 @@
 OS Security Check Success! :)
 ```
 
-## Server Security Check 서비스 게이트웨이 연동 
+<a id="integrate-with-server-security-check-service-gateway"></a>
+## Server Security Check 서비스 게이트웨이 연동 { #integrate-with-server-security-check-service-gateway }
 서비스 게이트웨이를 이용하면 NHN Cloud 내부에서 클라이언트와 Server Security Check가 통신할 때 외부 인터넷을 경유하지 않고, 내부 네트워크로 통신할 수 있습니다.
 Server Security Check 서비스 게이트웨이를 연동하는 방법은 아래와 같습니다.
 
@@ -38,7 +44,8 @@ Server Security Check 서비스 게이트웨이를 연동하는 방법은 아래
 
 ![ssc_sg_251117.png](https://static.toastoven.net/prod_serversecuritycheck/ssc_sg_251117.png)
 
-### 호스트 등록
+<a id="register-host"></a>
+### 호스트 등록 { #register-host }
 인스턴스에서 Server Security Check Endpoint의 IP를 찾을 수 있도록 호스트 파일에 Server Security Check 서비스 게이트웨이 IP 주소와 Server Security Check Endpoint 도메인을 입력합니다.
 Server Security Check 서비스 게이트웨이의 IP 주소는 **Network > Service Gateway** 페이지에서 확인할 수 있습니다.
 
@@ -58,15 +65,18 @@ C:\Windows\System32\drivers\etc\hosts 파일을 열고 다음 내용을 추가�
 {Server Security Check 서비스 게이트웨이 IP 주소} api-serversecuritycheck.nhncloudservice.com
 ```
 
-## 운영 문의
+<a id="operation-inquiry"></a>
+## 운영 문의 { #operation-inquiry }
 
-### 문의 대상
+<a id="inquiry-target"></a>
+### 문의 대상 { #inquiry-target }
 
 1\. Agent 실행 실패 문의
 
 2\. 점검 결과에 대한 오용 탐지 신고
 
-### 문의 방법
+<a id="how-to-inquire"></a>
+### 문의 방법 { #how-to-inquire }
 
 1\. 문의 방법: **고객 센터 > 1:1 문의**
 
