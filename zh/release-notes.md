@@ -9,7 +9,7 @@
 ### August 26, 2025
 
 #### Feature Updates
-* Public API Provided
+* API Guide provided
 
 ### July 29, 2025
 
