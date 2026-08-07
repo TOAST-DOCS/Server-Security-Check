@@ -1,25 +1,33 @@
-## Security > Server Security Check > API 가이드
+<!-- pre-align:aligned sig=dc0b66ff47c7 -->
+
+<a id="security-server-security-check-api-guide"></a>
+## Security > Server Security Check > API 가이드 { #security-server-security-check-api-guide }
 
 Server Security Check Public API를 설명합니다.
 
-## 공통 준비 사항
+<a id="common-requirements"></a>
+## 공통 준비 사항 { #common-requirements }
 
 API 사용을 위해서는 API 엔드포인트와 토큰이 필요합니다.
 
-### API 엔드포인트
+<a id="api-endpoint"></a>
+### API 엔드포인트 { #api-endpoint }
 
 | 리전 | 엔드포인트 |
 | --- | ----- |
 | 모든 리전 | https://kr1-server-security-check.api.nhncloudservice.com |
 
-### 인증 토큰 발급
+<a id="authentication-token-issue"></a>
+### 인증 토큰 발급 { #authentication-token-issue }
 
 Server Security Check는 API 인증/인가를 받기 위해 NHN Cloud 토큰을 이용합니다.
 [User Access Key 토큰](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/user-access-key-token/)을 확인하여 인증 토큰 사용에 필요한 정보를 확인합니다.
 
-## API 사용 공통 정보
+<a id="common-information-for-api-use"></a>
+## API 사용 공통 정보 { #common-information-for-api-use }
 
-### API 요청 공통 정보
+<a id="common-api-request-information"></a>
+### API 요청 공통 정보 { #common-api-request-information }
 
 API를 사용하려면 다음과 같은 정보가 필요합니다.
 
@@ -33,7 +41,8 @@ API를 사용하려면 다음과 같은 정보가 필요합니다.
     * Server Security Check 콘솔의 오른쪽 상단 **URL & Appkey** 메뉴 또는 프로젝트 관리의 **이용 중인 서비스**에서 확인할 수 있습니다.
     * 서비스 URL Path에 Appkey가 포함됩니다.
 
-### API 응답 공통 정보
+<a id="common-api-response-information"></a>
+### API 응답 공통 정보 { #common-api-response-information }
 
 * API 요청에 대한 응답으로 아래와 같이 응답 코드를 반환할 수 있습니다.
     * 200 OK
@@ -57,9 +66,11 @@ API를 사용하려면 다음과 같은 정보가 필요합니다.
 
 > [주의] API 응답에 가이드에 명시되지 않은 필드가 나타날 수 있습니다. 이런 필드는 NHN Cloud 내부 용도로 사용되며 사전 공지 없이 변경될 수 있으므로 사용하지 않습니다.
 
-## Server Security Check
+<a id="server-security-check"></a>
+## Server Security Check { #server-security-check }
 
-### 점검 결과 요약 조회
+<a id="view-inspection-summary"></a>
+### 점검 결과 요약 조회 { #view-inspection-summary }
 
 원하는 기간의 점검 결과를 요약 조회합니다.
 최대 1개월 이내의 점검 결과를 조회할 수 있습니다.
@@ -159,7 +170,8 @@ x-nhn-authorization: {token-id}
 
 </details>
 
-### 점검 결과 상세 조회
+<a id="inspection-result-details"></a>
+### 점검 결과 상세 조회 { #inspection-result-details }
 
 점검 결과 요약 조회 후 점검 결과 번호로 특정 점검 결과를 상세 조회합니다.
 
@@ -168,6 +180,7 @@ GET "/ssc/v1.0/appKey/{appKey}/inspection_result/details/{usageStasNo}"
 x-nhn-authorization: {token-id}
 ```
 
+<a id="inspection-result-details-request"></a>
 #### 요청
 
 이 API는 요청 본문을 요구하지 않습니다.
@@ -178,6 +191,7 @@ x-nhn-authorization: {token-id}
 | usageStasNo | URL | Integer | O | 점검 결과 번호 |
 | language | Query | String | X | KO, EN, JA(기본값 : KO) |
 
+<a id="inspection-result-details-response"></a>
 #### 응답
 
 | 이름 | 구분 | 타입 | 설명 |

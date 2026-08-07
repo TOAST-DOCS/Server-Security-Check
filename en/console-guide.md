@@ -1,14 +1,19 @@
-## Security > Server Security Check > Console Guide
+<!-- pre-align:aligned sig=782f156d2e4a -->
+
+<a id="security-server-security-check-console-guide"></a>
+## Security > Server Security Check > Console Guide { #security-server-security-check-console-guide }
 
 This section explains how to execute the check Agent.
 
-## Procedure to execute Agent
+<a id="procedure-to-execute-agent"></a>
+## Procedure to execute Agent { #procedure-to-execute-agent }
 
 Bring up the Agent execution script by selecting instance OS, check type and check standard.
 
 ![serversecuritycheck_01_20201015.png](https://static.toastoven.net/prod_serversecuritycheck/serversecuritycheck_01_20201015.png)
 
-### Linux-family Agent
+<a id="linux-family-agent"></a>
+### Linux-family Agent { #linux-family-agent }
 
 1\. Copy the execution script to the clipboard.
 
@@ -29,7 +34,8 @@ Bring up the Agent execution script by selecting instance OS, check type and che
 OS Security Check Success! :)
 ```
 
-## Integrate with Server Security Check Service Gateway 
+<a id="integrate-with-server-security-check-service-gateway"></a>
+## Integrate with Server Security Check Service Gateway { #integrate-with-server-security-check-service-gateway }
 Using the Service Gateway, communication between clients and Server Security Check within NHN Cloud can be done through the internal network without going through the external Internet.
 How to integrate with Server Security Check Service Gateway is as below:
 
@@ -38,7 +44,8 @@ How to integrate with Server Security Check Service Gateway is as below:
 
 ![ssc_sg_251117.png](https://static.toastoven.net/prod_serversecuritycheck/ssc_sg_251117.png)
 
-### Register Host
+<a id="register-host"></a>
+### Register Host { #register-host }
 Enter the Server Security Check Service Gateway IP address and the Server Security Check endpoint domain in the hosts file so that the instance can find the IP address of the Server Security Check endpoint.
 
 You can find the IP address of the Server Security Check service gateway on the Network > Service Gateway page.
@@ -60,15 +67,18 @@ Open /etc/hosts file and add the content below:
 ```
 
 
-## Operation Inquiry
+<a id="operation-inquiry"></a>
+## Operation Inquiry { #operation-inquiry }
 
-### Inquiry target
+<a id="inquiry-target"></a>
+### Inquiry target { #inquiry-target }
 
 1\. Inquiries about failing to execute Agent
 
 2\. Reports about the misuse of check results
 
-### How to Inquire
+<a id="how-to-inquire"></a>
+### How to Inquire { #how-to-inquire }
 
 1\. How to inquire **Customer Center > 1:1 Inquiry**
 
