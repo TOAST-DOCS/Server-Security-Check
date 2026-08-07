@@ -1,25 +1,33 @@
-## Security > Server Security Check > API Guide
+<!-- pre-align:aligned sig=dc0b66ff47c7 -->
+
+<a id="security-server-security-check-api-guide"></a>
+## Security > Server Security Check > API Guide { #security-server-security-check-api-guide }
 
 This document describes Server Security Check Public API.
 
-## Common Requirements
+<a id="common-requirements"></a>
+## Common Requirements { #common-requirements }
 
 API endpoint and token for using the API.
 
-### API Endpoint
+<a id="api-endpoint"></a>
+### API Endpoint { #api-endpoint }
 
 | Region | Endpoint |
 | --- | ----- |
 | Every Region | https://kr1-server-security-check.api.nhncloudservice.com |
 
-### Authentication Token Issue
+<a id="authentication-token-issue"></a>
+### Authentication Token Issue { #authentication-token-issue }
 
 Server Security Check uses the NHN cloud token to obtain API authentication/authorization.
-Please check [User Access Key Token](https://docs.alpha-nhncloud.com/en/nhncloud/en/public-api/user-access-key-token/) to confirm the information required to use the authentication token.
+Please check [User Access Key Token](https://docs.nhncloud.com/en/nhncloud/en/public-api/user-access-key-token/) to confirm the information required to use the authentication token.
 
-## Common Information for API Use
+<a id="common-information-for-api-use"></a>
+## Common Information for API Use { #common-information-for-api-use }
 
-### Common API Request Information
+<a id="common-api-request-information"></a>
+### Common API Request Information { #common-api-request-information }
 
 You need the following information to use API:
 
@@ -33,7 +41,8 @@ You need the following information to use API:
     * You can check it in the **URL & Appkey** menu at the top of the Server Security Check console or in **Services in Use** in Project Management.
     * Service URL Path includes Appkey.
 
-### Common API Response Information
+<a id="common-api-response-information"></a>
+### Common API Response Information { #common-api-response-information }
 
 * In response to an API request, a response code can be returned as follows:
     * **200 OK**
@@ -57,9 +66,11 @@ You need the following information to use API:
 
 > [Caution] Fields not specified in the guide may appear in API responses. These fields are used internally by NHN Cloud and are subject to change without prior notice, so they are not used.
 
-## Server Security Check
+<a id="server-security-check"></a>
+## Server Security Check { #server-security-check }
 
-### View Inspection Summary
+<a id="view-inspection-summary"></a>
+### View Inspection Summary { #view-inspection-summary }
 
 Summarize the inspection summary for the desired period you want.
 (The maximum view period is one month.)
@@ -159,7 +170,8 @@ This API does not request a response body.
 
 </details>
 
-### Inspection Result Details
+<a id="inspection-result-details"></a>
+### Inspection Result Details { #inspection-result-details }
 
 After viewing the inspection result summary, you can search for a specific inspection result in detail using the inspection result number.
 
@@ -168,6 +180,7 @@ GET "/ssc/v1.0/appKey/{appKey}/inspection_result/details/{usageStasNo}"
 x-nhn-authorization: {token-id}
 ```
 
+<a id="inspection-result-details-request"></a>
 #### Request
 
 This API does not request a response body.
@@ -178,6 +191,7 @@ This API does not request a response body.
 | usageStasNo | URL | Integer | O | Inspection result number |
 | language | Query | String | X | KO, EN, JA (default : KO) |
 
+<a id="inspection-result-details-response"></a>
 #### Response
 
 | Name | Type | Format | Description |

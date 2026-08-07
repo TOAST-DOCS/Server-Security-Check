@@ -1,25 +1,33 @@
-## Security > Server Security Check > APIガイド
+<!-- pre-align:aligned sig=dc0b66ff47c7 -->
+
+<a id="security-server-security-check-api-guide"></a>
+## Security > Server Security Check > APIガイド { #security-server-security-check-api-guide }
 
 Server Security Check Public APIについて説明します。
 
-## 共通の準備事項
+<a id="common-requirements"></a>
+## 共通の準備事項 { #common-requirements }
 
 APIを使用するには、APIエンドポイントとトークンが必要です。
 
-### APIエンドポイント
+<a id="api-endpoint"></a>
+### APIエンドポイント { #api-endpoint }
 
 | リージョン | エンドポイント |
 | --- | ----- |
 | 全てのリージョン | https://kr1-server-security-check.api.nhncloudservice.com |
 
-### 認証トークンの発行
+<a id="authentication-token-issue"></a>
+### 認証トークンの発行 { #authentication-token-issue }
 
 Server Security Checkは、APIの認証・認可のためにNHN Cloudトークンを利用します。
-[User Access Keyトークン](https://docs.alpha-nhncloud.com/ja/nhncloud/ja/public-api/user-access-key-token/)を参照し、認証トークンの使用に必要な情報を確認します。
+[User Access Keyトークン](https://docs.nhncloud.com/ja/nhncloud/ja/public-api/user-access-key-token/)を参照し、認証トークンの使用に必要な情報を確認します。
 
-## API利用の共通情報
+<a id="common-information-for-api-use"></a>
+## API利用の共通情報 { #common-information-for-api-use }
 
-### APIリクエスト共通情報
+<a id="common-api-request-information"></a>
+### APIリクエスト共通情報 { #common-api-request-information }
 
 APIを使用するには、以下の情報が必要です。
 
@@ -33,7 +41,8 @@ APIを使用するには、以下の情報が必要です。
     * Server Security Checkコンソール右上の**URL & Appkey**メニュー、またはプロジェクト管理の**利用中のサービス**から確認できます。
     * サービスのURL PathにAppKeyが含まれます。
 
-### APIレスポンス共通情報
+<a id="common-api-response-information"></a>
+### APIレスポンス共通情報 { #common-api-response-information }
 
 * APIリクエストへの応答として、以下のようなレスポンスコードを返すことがあります。
     * 200 OK
@@ -57,9 +66,11 @@ APIを使用するには、以下の情報が必要です。
 
 > [注意] APIの応答に、ガイドに記載されていないフィールドが含まれることがあります。これらのフィールドはNHN Cloudの内部目的で使用され、事前の通知なく変更される可能性があるため、使用しないでください。
 
-## Server Security Check
+<a id="server-security-check"></a>
+## Server Security Check { #server-security-check }
 
-### 点検結果の要約照会
+<a id="view-inspection-summary"></a>
+### 点検結果の要約照会 { #view-inspection-summary }
 
 指定した期間の点検結果を要約して照会します。
 最大1か月以内の点検結果を照会できます。
@@ -159,7 +170,8 @@ x-nhn-authorization: {token-id}
 
 </details>
 
-### 点検結果の詳細照会
+<a id="inspection-result-details"></a>
+### 点検結果の詳細照会 { #inspection-result-details }
 
 点検結果の要約を照会した後、点検結果番号で特定の点検結果を詳細に照会します。
 
@@ -168,6 +180,7 @@ GET "/ssc/v1.0/appKey/{appKey}/inspection_result/details/{usageStasNo}"
 x-nhn-authorization: {token-id}
 ```
 
+<a id="inspection-result-details-request"></a>
 #### リクエスト
 
 このAPIはリクエスト本文を要求しません。
@@ -178,6 +191,7 @@ x-nhn-authorization: {token-id}
 | usageStasNo | URL | Integer | O | 点検結果番号 |
 | language | Query | String | X | KO, EN, JA(デフォルト値: KO) |
 
+<a id="inspection-result-details-response"></a>
 #### レスポンス
 
 | 名前 | 区分 | 型 | 説明 |
