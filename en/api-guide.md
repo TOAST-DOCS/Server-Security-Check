@@ -21,7 +21,7 @@ API endpoint and token for using the API.
 ### Authentication Token Issue { #authentication-token-issue }
 
 Server Security Check uses the NHN cloud token to obtain API authentication/authorization.
-Please check [User Access Key Token](https://docs.nhncloud.com/en/nhncloud/en/public-api/user-access-key-token/) to confirm the information required to use the authentication token.
+Please check [User Access Key Token](/nhncloud/en/public-api/user-access-key-token/) to confirm the information required to use the authentication token.
 
 <a id="common-information-for-api-use"></a>
 ## Common Information for API Use { #common-information-for-api-use }
